@@ -37,15 +37,26 @@ class Driver
      */
     private $phone;
 
+
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $adress;
+    private $car;
 
     /**
      * @ORM\Column(type="string", length=64, nullable=true)
      */
-    private $payment;
+    private $immatriculation;
+
+    /**
+     * @ORM\Column(type="string", length=64, nullable=true)
+     */
+    private $licenceNumber;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $rating;
 
     public function getId(): ?int
     {
@@ -100,26 +111,51 @@ class Driver
         return $this;
     }
 
-    public function getAdress(): ?string
+
+    public function getCar(): ?string
     {
-        return $this->adress;
+        return $this->car;
     }
 
-    public function setAdress(?string $adress): self
+    public function setCar(?string $car): self
     {
-        $this->adress = $adress;
+        $this->car = $car;
 
         return $this;
     }
 
-    public function getPayment(): ?string
+    public function getImmatriculation(): ?string
     {
-        return $this->payment;
+        return $this->immatriculation;
     }
 
-    public function setPayment(?string $payment): self
+    public function setImmatriculation(?string $immatriculation): self
     {
-        $this->payment = $payment;
+        $this->immatriculation = $immatriculation;
+
+        return $this;
+    }
+
+    public function getLicenceNumber(): ?string
+    {
+        return $this->licenceNumber;
+    }
+
+    public function setLicenceNumber(?string $licenceNumber): self
+    {
+        $this->licenceNumber = $licenceNumber;
+
+        return $this;
+    }
+
+    public function getRating(): ?float
+    {
+        return $this->rating;
+    }
+
+    public function setRating(?float $rating): self
+    {
+        $this->rating = $rating;
 
         return $this;
     }
